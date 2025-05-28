@@ -1,5 +1,4 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -p stow
 #!nix-shell -i bash
 
 # Get the directory containing the script
@@ -9,7 +8,7 @@ cd $script_dir
 # Create fish functions directory if it doesn't exist
 mkdir -p ~/.config/fish/functions
 
-# Stow each function file from the functions directory to fish functions directory
+# Stow each function file
 for func_file in "$script_dir"/functions/*.fish; do
   if [ -f "$func_file" ]; then
     func_name=$(basename "$func_file")
